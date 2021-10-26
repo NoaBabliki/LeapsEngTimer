@@ -9605,7 +9605,7 @@ var ResultsScene = function (_util$Entity5) {
       // Redirecting to a link after the experiment. This is different from the one above
       // because it doensn't have the parameters. 
       // TODO delete one of them.
-      if (searchParams.has("urlNextLink") && (!localStorage.getItem('active') === 'results')) {
+      if (searchParams.has("urlNextLink") && (localStorage.getItem('active') !== 'results')) {
         var link = searchParams.get("urlNextLink");
         if (!_.contains(link, "http://")) {
           link = "http://" + link;
