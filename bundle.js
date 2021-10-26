@@ -9587,7 +9587,7 @@ var ResultsScene = function (_util$Entity5) {
         document.getElementById("code").innerText = redmetricsConnection.playerId ? redmetricsConnection.playerId.substr(-8) : "Unknown";
 
         // Setup followup link
-        if (searchParams.has("followupLink")) {
+        if (searchParams.has("followupLink") && (localStorage.getItem('active') !== 'results')) {
           var expId = searchParams.get("expId") || searchParams.get("expID") || "";
           var userId = searchParams.get("userId") || searchParams.get("userID") || "";
           var metricsId = redmetricsConnection.playerId || "";
