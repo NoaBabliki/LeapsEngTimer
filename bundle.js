@@ -8527,10 +8527,10 @@ var IntroScene = function (_util$Entity) {
   createClass(IntroScene, [{
     key: "setup",
     value: function setup() {
-     // if (localStorage.getItem('active') === 'results'){
-       // this.skip = true;
-        //return changeScene(localStorage.getItem('active'))
-     // }
+      if (localStorage.getItem('active') === 'results'){
+        this.skip = true;
+        return changeScene(localStorage.getItem('active'))
+      }
       document.getElementById("intro-gui").style.display = "block";
 
       document.getElementById("user-provided-id").addEventListener("keyup", this.onSetUserProvidedId.bind(this));
@@ -8858,7 +8858,6 @@ var BlockScene = function (_util$Entity3) {
               document.getElementById("throw-out-2").addEventListener("click", function (e) {
                 return self.onDoneSelection();
               });
-              console.log("here")
               document.getElementById("done-adding").disabled = true;
             }
           }
@@ -9497,15 +9496,12 @@ var GalleryScene = function (_util$Entity4) {
   }, {
     key: "onDoneSelection",
     value: function onDoneSelection() {
-      console.log("got here 1")
       var selectedShapes = _.map(this.selectedIndexes, function (index) {
         return convertShapeToArray(galleryShapes[index]);
       });
-      console.log('got here 2')
 
       sendTrigger("galleryDone");
 
-      console.log('got here 3')
       redmetricsConnection.postEvent({
         type: "done selection",
         customData: {
@@ -9513,9 +9509,7 @@ var GalleryScene = function (_util$Entity4) {
           shapes: selectedShapes
         }
       });
-      console.log('got here 4')
       this.done = true;
-      console.log('got here 5')
     }
   }]);
   return GalleryScene;
