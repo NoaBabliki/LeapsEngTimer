@@ -8527,10 +8527,10 @@ var IntroScene = function (_util$Entity) {
   createClass(IntroScene, [{
     key: "setup",
     value: function setup() {
-      if (localStorage.getItem('active') === 'results'){
-        this.skip = true;
-        return changeScene(localStorage.getItem('active'))
-      }
+     // if (localStorage.getItem('active') === 'results'){
+       // this.skip = true;
+        //return changeScene(localStorage.getItem('active'))
+     // }
       document.getElementById("intro-gui").style.display = "block";
 
       document.getElementById("user-provided-id").addEventListener("keyup", this.onSetUserProvidedId.bind(this));
