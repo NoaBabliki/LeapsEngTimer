@@ -8376,7 +8376,7 @@ var ParallelEntities = function (_Entity2) {
 }(Entity);
 
 var BLOCK_WIDTH = 50;
-var MAX_SEARCH_TIME = 2 * 60 * 1000;
+var MAX_SEARCH_TIME = 12 * 60 * 1000;
 var BLOCK_COLOR = 0x81e700;
 var HIGHLIGHTED_BLOCK_COLOR = 0x59853b;
 var DRAG_HIGHLIGHT_PERIOD = 500;
