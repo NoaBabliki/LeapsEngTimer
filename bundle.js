@@ -9582,6 +9582,7 @@ var ResultsScene = function (_util$Entity5) {
 
         // Setup followup link
         if (searchParams.has("followupLink") && (!localStorage.getItem('active'))) {
+          console.log('redirect from first')
           var expId = searchParams.get("expId") || searchParams.get("expID") || "";
           var userId = searchParams.get("userId") || searchParams.get("userID") || "";
           var metricsId = redmetricsConnection.playerId || "";
@@ -9600,6 +9601,7 @@ var ResultsScene = function (_util$Entity5) {
       // because it doensn't have the parameters. 
       // TODO delete one of them.
       if (searchParams.has("urlNextLink") && (!localStorage.getItem('active'))) {
+        console.log('redirect')
         var link = searchParams.get("urlNextLink");
         if (!_.contains(link, "http://")) {
           link = "http://" + link;
